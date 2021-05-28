@@ -10,7 +10,7 @@ public class FileDB {
   private String id;
 
   private String name;
-  private String jobid;
+
   private String type;
 
   private byte[] data;
@@ -18,19 +18,10 @@ public class FileDB {
   public FileDB() {
   }
 
-  public String getJobid() {
-    return jobid;
-  }
-
-  public void setJobid(String jobid) {
-    this.jobid = jobid;
-  }
-
-  public FileDB(String name,String type, byte[] data,String jobid) {
+  public FileDB(String name, String type, byte[] data) {
     this.name = name;
     this.type = type;
     this.data = data;
-    this.jobid= jobid;
   }
 
   public String getId() {

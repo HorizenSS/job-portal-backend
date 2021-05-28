@@ -1,5 +1,6 @@
 package com.ines.security.services;
 
+
 import com.ines.models.FileDB;
 import com.ines.repository.FileDBRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,9 @@ public class FileStorageService {
   @Autowired
   private FileDBRepository fileDBRepository;
 
-  public FileDB store(MultipartFile file, String  jobid) throws IOException {
+  public FileDB store(MultipartFile file) throws IOException {
     String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-    FileDB FileDB = new FileDB(fileName, file.getContentType(), file.getBytes(), jobid);
+    FileDB FileDB = new FileDB(fileName, file.getContentType(), file.getBytes());
 
     return fileDBRepository.save(FileDB);
   }
